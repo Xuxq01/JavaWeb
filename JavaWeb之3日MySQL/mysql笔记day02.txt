@@ -861,7 +861,7 @@ delete from dept1 where deptno =10;
 删除所有记录？
 delete from dept1;
 
-怎么删除大表？（重点）
+怎么删除大表中的数据？（重点）
 truncate table 表名; //表被截断，不可回滚。永久丢失。
 
 12、DQL（select）DML(insert delete update)
