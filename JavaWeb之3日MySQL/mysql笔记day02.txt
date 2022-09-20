@@ -740,4 +740,161 @@ create table t_student(
 	classno varchar(255),
 	birth char(10)
 );
---------------------------------任务未完成,明天补
+----------------------------------------------------------------------任务未完成,明天补---------------------------------------------------------------------------------
+7、insert语句插入数据
+语法格式：
+insert into 表名（字段名1，字段名2，字段名3....）values(值1，值2，值3)
+要求：字段的数量和值的数量相同,并且数据类型要对应相同,只要能对应上,顺序无所谓。
+insert into t_student (no,name,sex,classno,birth) values(1,'zahngsan','1','gaosan1ban','1950-10-12');
+
+insert into t_student (name,sex,classno,birth,no) values ('lisi','1','gaosan1ban','1950-10-12',2);
++------+----------+------+------------+------------+
+| no   | name     | sex  | classno    | birth      |
++------+----------+------+------------+------------+
+|    1 | zahngsan | 1    | gaosan1ban | 1950-10-12 |
++------+----------+------+------------+------------+
+
+insert into t_student (name) values ('wangwu');// 除name字段外，剩下的所有字段自动插入NULL。
++------+----------+------+------------+------------+
+| no   | name     | sex  | classno    | birth      |
++------+----------+------+------------+------------+
+|    1 | zahngsan | 1    | gaosan1ban | 1950-10-12 |
+|    2 | lisi     | 1    | gaosan1ban | 1950-10-12 |
+| NULL | wangwu   | NULL | NULL       | NULL       |
++------+----------+------+------------+------------+
+
+drop table if exists t_student;//当这个表存在的话删除。
+
+create table t_student(
+	no bigint,
+ 	name varchar(255),
+	sex char(1) default 1,
+	classno varchar(255),
+	birth char(10)
+);
+insert into t_student (name) values('zhagnsan');
++------+----------+------+---------+-------+
+| no   | name     | sex  | classno | birth |
++------+----------+------+---------+-------+
+| NULL | zhagnsan | 1    | NULL    | NULL  |
++------+----------+------+---------+-------+
+
+需要注意的地方：
+当一条insert语句执行成功之后，表格当中必然会多一行记录。即使多的这一行记录当中某些字段是NULL ，后期也无法在执行insert 语句插入数据了，只能使用update进行更新。
+insert into t_student values (1,'jack','0','gaosan2ban','1986-10-23');//注意：字段可以省略不写，但是后面的value对数量和顺序都有要求。
+//一行插入多行数据
+insert into t_student (no,name,sex,classno,birth) values(3,'rose','1','gaosna2ban','1952-12-14'),(4,'laotie','1','gaosi2ban','1999-10-06');
++------+----------+------+------------+------------+
+| no   | name     | sex  | classno    | birth      |
++------+----------+------+------------+------------+
+| NULL | zhagnsan | 1    | NULL       | NULL       |
+|    1 | jack     | 0    | gaosan2ban | 1986-10-23 |
+|    3 | rose     | 1    | gaosna2ban | 1952-12-14 |
+|    4 | laotie   | 1    | gaosi2ban  | 1999-10-06 |
++------+----------+------+------------+------------+
+
+8、表的复制
+语法：
+create table 表名 as select 语句；
+将查询结果当做表创建出来。
+
+9、将查询结果插入到一张表中？(表中的数据要对应)
+insert into dept select* from dept;
+select * from dept1;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+
+10、修改数据：update
+语法格式：
+update 表名 set 字段名1=值1，字段名2=值2...where 条件；
+注意：没有条件整张表数据全部更新。
+
+案例：将部门10的LOC修改为SHANGHAI,将部门名称修改为RENSHIBU 
+update dept1 set loc = 'SHANGHAI',dname = 'RENSHIBU' where deptno = 10;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | RENSHIBU   | SHANGHAI |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
+|     10 | RENSHIBU   | SHANGHAI |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+
+更新所有记录
+update dept1 set loc='x',dname='y';
+select * from dept1;
++--------+-------+------+
+| DEPTNO | DNAME | LOC  |
++--------+-------+------+
+|     10 | y     | x    |
+|     20 | y     | x    |
+|     30 | y     | x    |
+|     40 | y     | x    |
+|     10 | y     | x    |
+|     20 | y     | x    |
+|     30 | y     | x    |
+|     40 | y     | x    |
++--------+-------+------+
+
+11、删除数据？
+语法格式：
+delete from 表名 where 条件；
+注意：没有条件全部删除。
+
+删除10部门数据？
+delete from dept1 where deptno =10;
+
+删除所有记录？
+delete from dept1;
+
+怎么删除大表？（重点）
+truncate table 表名; //表被截断，不可回滚。永久丢失。
+
+12、DQL（select）DML(insert delete update)
+DDL(create drop alter)
+对于表结构的修改，这里不讲了，大家使用工具完成即可，因为在实际开发中表一旦设计好之后，对表结构的修改是很少的，修改表结构就是对之前的设计进行了否定，即使需要修改表结构，我们也可以直接使用工具操作。修改表结构的语句不会出现在Java代码当中。出现在java代码当中的sql包括：insert delete update select (这些都是表中的数据操作。)
+
+增删改查有一个术语：CRUD操作
+Create（增） Retrieve（检索） Update（修改） Delete（删除）
+
+13、约束（Constraint）
+13.1、什么是约束？常见的约束有哪些呢？
+	在创建表的时候，可以给表的字段添加相应的约束，添加约束的目的是为了保证表中数据的合法性、有效性、完整性。
+
+常见的约束有哪些呢？
+	非空约束（not null）：约束的字段不能为 NULL。
+	唯一约束（unique）：约束的字段不能重复
+	主键约束（primary key）：约束的字段既不能为NULL也不能重复(简称PK)
+	外键约束（foreign key）：...简称FK
+	检查约束（check）：注意oracle数据库有check约束，但是mysql没有，目前mysql不支持该约束
+
+13.2、非空约束 not null
+drop table if exists t_user;
+	create table t_user(
+	id int,
+	username varchar(255) not null,
+	password varchar(255)
+);
+insert into t_user (id,password) values(1,'123');
+ERROR 1364 (HY000): Field 'username' doesn't have a default value
+
+insert into t_user(id,username,password) values(1,'lisi','123');
++------+----------+----------+
+| id   | username | password |
++------+----------+----------+
+|    1 | lisi     | 123      |
++------+----------+----------+
