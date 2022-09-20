@@ -898,3 +898,5 @@ insert into t_user(id,username,password) values(1,'lisi','123');
 +------+----------+----------+
 |    1 | lisi     | 123      |
 +------+----------+----------+
+
+day02结束~~~
