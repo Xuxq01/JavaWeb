@@ -23,7 +23,7 @@ public class DBUtil {
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
     }
 
     public static void close(Connection conn, Statement ps, ResultSet rs) {
