@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>HTML的表格</title>
+	</head>
+
+	<body>
+		<!--表格的单元格合并-->
+		<table border = "1px">
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<!--
+					行合并口诀:
+						后面的单元格注释掉,前面的单元格上使用rowspan属性进行合并,合并几个写几个
+				-->
+				<td rowspan = "2">单元格x</td>
+			</tr>
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<!--
+				<td>单元格x</td>
+				-->
+				
+			</tr>
+			<tr>
+				<!--
+					列合并口诀:
+						单元格注释任意一个,另一个单元格上使用colspan进行列合并,合并几个写几个
+				-->
+				<td colspan = "2" align = "center">单元格y</td>
+				<!--
+				<td>单元格y</td>
+				-->
+				<td>单元格</td>
+			</tr>
+		</table>
+	</body>
+</html>
