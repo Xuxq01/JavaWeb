@@ -39,7 +39,7 @@ public class JDBCTest07 {
             //1.注册驱动
             Class.forName("com.mysql.jdbc.Driver");
             //2.获取连接
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
             //3.获取预编译的数据库操作对象
             // SQL语句的框架,其中一个?表示一个占位符,一个?接收一个值,注意,占位符不能使用单引号括起来
             String sql = "select * from t_user where loginName = ? and loginPwd = ?";
