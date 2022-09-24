@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单form</title>
+    </head>
+    <body>
+        <a href="http://www.baidu.com">百度</a>
+        <!-- 
+            1.什么是表单,有什么用?
+                表单可以用来收集用户的数据,提交表单时,可以向服务器发送请求,并且还可以携带用户填写的数据
+            2.form标签的属性:
+                action属性用来指定请求路径,也就是说数据提交的时候,提交给谁?
+                action属性和超链接的hert属性相同,都是提供"请求路径"的
+
+                method:指定表但提交的方式/方法,常见的包括两种
+                    get方式提交:提交的时候,提交的数据会直接显示在浏览器的地址栏上
+                    pos方式提交:提交的时候,提交的数据不会直接显示在浏览器的地址栏上
+                    method缺省的时候,默认get方式提交
+                    只有当method设置为post的时候,表单才会采用post方式提交
+         -->
+         <form action="http://www.baidu.com" method="get">
+            <!-- 提交按钮 -->
+            <!-- input标签被称为输入域,当type是submit的时候表示提交按钮 -->
+            <!-- 提交按钮具有提交表单的能力 -->
+            <!-- 提交表单就是发送请求,并且提供数据 -->
+            <!-- <input type="submit"/> -->
+
+            <!-- 设置按钮上显示的文本 -->
+            <input type="submit" value="百度">
+
+            <!-- 普通按钮 -->
+            <!-- 普通按钮不具备提交表单的能力 -->
+            <input type="button" value="普通按钮">
+
+            <button>我是一个按钮对象</button>
+         </form>
+    </body>
+</html>

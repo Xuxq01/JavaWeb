@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单form</title>
+    </head>
+    <body>
+        <form action="http://localhost:8080/oa/login" method="get">
+            <!-- 
+                input标签是form表单中非常重要的输入域控件,所有输入域控件
+                都是用来收集用户的数据,用户实际上就是向输入域控件中输入数据的
+                2.input标签中常用的属性是type属性,用来设置输入域控件展示的样式
+                    text    文本框
+                    password    密码框
+                    radio   单选按钮
+                    checkbox    复选框
+                    ....
+             -->
+             <h2 align="center">user login</h2>
+             <hr>
+            username:&nbsp;&nbsp;<input type="text" name="yonghuming" value="输入用户名"><br>
+            password:&nbsp;&nbsp;<input type="password" name="mima"><br>
+            <input type="submit" value="login">
+        </form>
+    </body>
+</html>
