@@ -30,7 +30,7 @@ public class JDBCTest11 {
         PreparedStatement ps = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
 
             //将自动提交机制修改为手动提交
             conn.setAutoCommit(false);//开启事务
