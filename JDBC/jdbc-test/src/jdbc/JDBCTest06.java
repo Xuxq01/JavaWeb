@@ -52,7 +52,7 @@ public class JDBCTest06 {
             //1.注册驱动
             Class.forName("com.mysql.jdbc.Driver");
             //2.获取连接
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
             //3.获取数据库操作对象
             stmt = conn.createStatement();
             //4.执行sql
