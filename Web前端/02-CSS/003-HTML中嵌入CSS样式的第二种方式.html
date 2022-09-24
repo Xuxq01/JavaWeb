@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>003-HTML中嵌入CSS样式的第二种方式:定义内部样式块对象</title>
+        <style type="text/css">
+            /* 这是CSS的注释 */
+            /* 设置id="mydiv"元素的宽度高度和背景色 */
+            /* 
+                设置某个元素的样式,首先要选中这个元素,怎么选中一个或多个元素呢?
+                    常见的选择元素的方式有三种:
+                        id选择器
+                        标签选择器
+                        类选择器
+            */
+            /* 关于id选择器的使用 */
+            #mydiv {
+                width: 200px;
+                height: 200px;
+                background-color: greenyellow;
+            }
+
+            /* 标签选择器 */
+            /* 作用于当前页面中所有的input元素 */
+            input {
+                width: 500px;
+                height: 30px;
+                /* border-color: red;
+                border-style: solid;
+                border-width: 3px; */
+
+                border: 3px solid blue;
+            }
+
+            /* id选择器比标签选择器优先级高 */
+            #email {
+                width: 400px;
+                height: 30px;
+                border: 1px dashed black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mydiv">
+            <br>
+
+        </div>
+
+        用户名<input type="text" name="username"><br><br>
+        密码<input type="password" name="password">
+
+        <br><br><br>
+
+        邮箱地址:<input id="email" type="text">
+    </body>
+</html>
