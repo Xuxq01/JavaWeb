@@ -14,7 +14,7 @@ public class JDBCTest09 {
         PreparedStatement ps = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
             /*String sql = "insert into dept(deptno,dname,loc) values(?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setInt(1,60);
