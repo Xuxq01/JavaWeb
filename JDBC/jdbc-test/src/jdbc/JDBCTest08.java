@@ -16,7 +16,7 @@ public class JDBCTest08 {
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
             String sql = "select ename from emp order by ename ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1,keyWords);
@@ -63,7 +63,7 @@ public class JDBCTest08 {
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
             stmt = conn.createStatement();
             String sql = "select ename from emp order by ename " + keyWords;
             rs = stmt.executeQuery(sql);
