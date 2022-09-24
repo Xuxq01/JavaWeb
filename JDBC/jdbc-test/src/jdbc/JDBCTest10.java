@@ -19,7 +19,7 @@ public class JDBCTest10 {
         PreparedStatement ps = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","QIan20030625");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bjpowernode","root","123");
 
             String sql = "update dept set dname = ? where deptno = ?";
             ps = conn.prepareStatement(sql);
