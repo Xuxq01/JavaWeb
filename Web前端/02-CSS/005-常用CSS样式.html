@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>常用CSS样式</title>
+        <!-- 样式块 -->
+        <style type="text/css">
+            .cities {
+                display: none;
+            }
+
+            #nameError {
+                font-size: 12px;
+                color: red;
+            }
+
+            .baidu {
+                /* none表示没有下划线 */
+                text-decoration: none;
+            }
+
+            #country {
+                /* 列表样式类型取消 */
+                list-style-type: none;
+            }
+
+            /* :hover是专门用来设置鼠标悬停效果的 */
+            /* 当鼠标悬停的时候,执行样式,当鼠标离开的时候样式取消 */
+            /* 使用hover的时候,冒号两边不能有空格 */
+            #bjpowernode:hover {
+                color: red;
+                cursor: pointer;
+            }
+
+            .mydiv {
+                width: 100px;
+                height: 100px;
+                background-color: #444;
+                border: 1px red solid;
+                /* 外补丁:在元素外部打补丁 */
+                margin-top: 100px;
+                margin-left: 100px;
+                /* 内补丁 */
+                padding-right: 100px;
+            }
+
+            #outdiv {
+                width: 300px;
+                height: 300px;
+                background-color: red;
+            }
+
+            #innerdiv {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                float: right;
+            }
+
+            #mydiv2 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 绝对定位 -->
+        <div id="mydiv2">
+
+        </div>
+        
+        <!-- 内补丁,外补丁 -->
+        <div class="mydiv"></div>
+        <!-- 设置鼠标悬停效果 -->
+        <!-- 鼠标移动到以下文本上,希望字体颜色变成红色,鼠标变成手 -->
+        <span id="bjpowernode">动力节点-口口相传的java黄埔军校</span>
+
+        <!-- 无序列表 -->
+        <ul id="country">
+            <li>中国
+                <ul class="cities">
+                    <li>北京</li>
+                    <li>上海</li>
+                    <li>天津</li>
+                </ul>
+            </li>
+            <li>美国
+                <ul class="cities">
+                    <li>华盛顿</li>
+                    <li>芝加哥</li>
+                    <li>波士顿</li>
+                </ul>
+            </li>
+            <li>日本</li>
+        </ul>
+
+        <!-- 字体样式 -->
+        <span id="nameError">用户名不能为空</span>
+        <br><br>
+
+        <!-- 文本装饰 -->
+        <a class="baidu" href="http://www.baidu.com">百度</a>
+
+        <!-- 浮动效果float样式 -->
+        <!-- 外部div -->
+        <div id="outdiv">
+            <!-- 内部div -->
+            <div id="innerdiv">
+
+            </div>
+        </div>
+    </body>
+</html>
