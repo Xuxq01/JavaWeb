@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //能够执行,函数定义优先级较高
+            //hello()
+            /*
+                1.关于java中的方法
+                2.关于js中的方法
+                function 函数名(形式参数列表){
+                    函数体
+                }
+                3.js中的函数定义后必须手动调用才会执行
+            */
+            function hello(){
+                alert("hello world")
+            }
+
+            //调用函数
+            //hello()
+
+            function sum(a,b){
+                console.log(a + b)
+            }
+        </script>
+
+        <input type="button" value="hello" onclick="hello()">
+        <button type="button" onclick="sum(1,2)">求和</button>
+
+        <script type="text/javascript">
+            sayHello = function(username){
+                console.log("welcome," + username)
+            }
+        </script>
+        <input type="button" value="hello" onclick="sayHello('lucy')">
+    </body>
+</html>

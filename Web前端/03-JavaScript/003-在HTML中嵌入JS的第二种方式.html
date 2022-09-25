@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>在HTML中嵌入JS的第二种方式</title>
+    </head>
+    <body>
+        <!-- 脚本块 -->
+        <!-- 脚本块可以写多个并且没有位置的限制 -->
+        <script type="text/javascript">
+            // JS的注释,和java是相同的
+            // 在script标签内部的代码会遵循自上而下的顺序依次逐行执行
+            // 并且在script内部的JS会在页面打开的时候执行,不需要任何事件的发生
+            alert("hello world")
+            alert("hello jack")
+            alert("hello zhangsan")
+        </script>
+    </body>
+</html>
+
+<script>
+    alert("end")
+</script>

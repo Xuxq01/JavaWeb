@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>嵌入JavaScript的第一种方式</title>
+    </head>
+    <body>
+        <!-- 
+            1.需求:在页面中有一个按钮,用户点击这个按钮弹出对话框
+            2.js是一种基于事件和事件驱动型的编程语言,一般都是依靠事件来触发js代码执行的
+            例如:鼠标单击事件:click,获取焦点事件:focus....
+            3.在js当中任何一个事件都有对应的一个事件句柄,所有的事件句柄都是在事件名称前加on
+            例如:click对用的事件句柄onclick
+            focus对应的事件句柄:onfocus
+            ....
+            4.注意:所有的事件句柄都是以"标签的属性"形式存在
+            5.在js中有一个内置的隐含对象:window,全部小写
+            window代表的是浏览器窗口对象
+            window对象有一个alert方法/函数,它可以完成弹窗操作
+         -->
+         <input type="button" value="hello" onclick="window.alert(123456)"/>
+
+         <!-- JS当中字符串可以是双引号,也可以是单引号 -->
+         <input type="button" value="hello" onclick="window.alert('hello world')"/>
+
+         <!-- JS语句结束后可以写分号也可以不写 -->
+         <input type="button" value="hello" onclick='window.alert("hello world2")'/>
+
+         <!-- window.可以省略 -->
+         <input type="button" value="hello" onclick="window.alert('hello world')
+                                                    window.alert('hello kitty')
+                                                    alert('hello jack')"/>
+    </body>
+</html>

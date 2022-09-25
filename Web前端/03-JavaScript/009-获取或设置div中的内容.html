@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>获取或设置div中的内容</title>
+    </head>
+    <body>
+        <!-- innerHTML这是一个属性不是一个函数 -->
+        <script type="text/javascript">
+            function getContent(){
+                //获取div中的内容
+                var divElt1 = document.getElementById("div1")
+                //innerHTML是一个非常重要的属性,他可以获取也可以设置元素内部的内容
+                console.log(divElt1.innerHTML)
+
+                var divElt2 = document.getElementById("div2")
+                div2.innerHTML = divElt1.innerHTML
+            }
+        </script>
+        <div id="div1">
+            hello,jack,welcome to China!
+        </div>
+
+        <div id="div2" style="background-color: aqua;">
+
+        </div>
+        <input type="button" value="获取div中的内容" onclick="getContent()">
+    </body>
+</html>
