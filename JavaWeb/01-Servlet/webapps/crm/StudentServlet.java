@@ -21,24 +21,24 @@ public class StudentServlet implements Servlet{
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		//±àĞ´JDBC´úÂëÁ¬½ÓÊı¾İ¿â,²éÑ¯ËùÓĞÑ§ÉúĞÅÏ¢
+		//ç¼–å†™JDBCä»£ç è¿æ¥æ•°æ®åº“,æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			//×¢²áÇı¶¯
+			//æ³¨å†Œé©±åŠ¨
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			//»ñÈ¡Á¬½Ó
+			//è·å–è¿æ¥
 			String url = "jdbc:mysql://localhost:3306/bjpowernode";
 			String user = "root";
-			String password = "QIan20030625";
+			String password = "333";
 			conn = DriverManager.getConnection(url,user,password);
-			//»ñÈ¡Êı¾İ¿â²Ù×÷¶ÔÏó
+			//è·å–æ•°æ®åº“æ“ä½œå¯¹è±¡
 			String sql = "select no,name from t_student";
 			ps = conn.prepareStatement(sql);
-			//Ö´ĞĞSQL
+			//æ‰§è¡ŒSQL
 			rs = ps.executeQuery();
-			//´¦Àí²éÑ¯½á¹û¼¯
+			//å¤„ç†æŸ¥è¯¢ç»“æœé›†
 			while(rs.next()){
 				String no = rs.getString("no");
 				String name = rs.getString("name");
@@ -48,7 +48,7 @@ public class StudentServlet implements Servlet{
 		}catch(Exception e){
 			e.printStackTrace();
 		} finally{
-			//ÊÍ·Å×ÊÔ´
+			//é‡Šæ”¾èµ„æº
 			if(rs != null){
 				try{
 					rs.close();
