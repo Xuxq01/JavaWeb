@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手动封装JS库jQuery</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    //封装一个函数,通过这个函数可以获得HTML中的节点,起名jQuery
+    function jQuery(selector){//可能是#id,也可能是其他选择器,例如类选择器.class
+        if (typeof selector == "string") {
+
+            //根据id获取元素
+            if (selector.charAt(0) == "#") {
+                //传过来的selector是一个id选择器
+                //var domObj = document.getElementById(selector.substring(1))
+                //升级成全局变量,去掉var
+                domObj = document.getElementById(selector.substring(1))
+                //返回dom对象
+                //return domObj
+                //返回jQuery对象
+                return new jQuery()
+            }
+        }
+
+        if (typeof selector == "function") {
+            window.onload = selector
+        }
+
+        //定义一个html方法,代替domObj.innerHTML = ""
+        this.html = function (htmlStr){
+            domObj.innerHTML = htmlStr
+        }
+
+        //定义一个click函数,代替domObj.onclick = function(){}
+        this.click = function (fun){
+            domObj.onclick = fun
+        }
+
+        this.val = function (v){
+            if(v == undefined){
+                return domObj.value
+            }else{
+                domObj.value = v
+            }
+        }
+
+    }
+
+    $ = jQuery
+
+    //------------------------------------------------------------------------------------------------------------------
+    /*window.onload = function (){
+        /!*document.getElementById("btn").onclick = function (){
+            document.getElementById("div1").innerHTML = "<font color='red'>用户名不可用!</font>"
+        }*!/
+
+        $("#btn").onclick = function (){
+            $("#div1").innerHTML = "<font color='red'>用户名不可用!</font>"
+        }
+    }*/
+
+    /*$(function (){
+        $("#btn").onclick = function (){
+            $("#div1").innerHTML = "<font color='red'>用户名不可用!</font>"
+        }
+    })*/
+
+    $(function (){
+        $("#btn").click(function (){
+            $("#div1").html("<font color='red'>用户名不可用!</font>")
+
+            //获取文本框中的用户名
+            /*var username = document.getElementById("username").value
+            alert(username)*/
+
+            var username = $("#username").val()
+            alert(username)
+
+            //修改文本框的value
+            /*document.getElementById("username").value = "呵呵"*/
+            $("#username").val("呵呵")
+        })
+
+        /*$("#btn").onclick = function (){
+            $("#div1").html("<font color='red'>用户名不可用!</font>")
+        }*/
+    })
+
+</script>
+
+<input type="text" id="username">
+
+<button id="btn">显示信息</button>
+
+<div id="div1"></div>
+
+</body>
+</html>

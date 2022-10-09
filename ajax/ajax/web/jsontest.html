@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json test</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    /*
+    在JavaScript语言中怎么创建一个json对象?语法是什么?
+        var jsonobj = {
+            "属性名" : 属性值,
+            "属性名" : 属性值,
+            "属性名" : 属性值,
+            "属性名" : 属性值,
+            "属性名" : 属性值
+        }
+
+        注意:
+            属性值的数据类型随意
+     */
+    /*var user = {
+        "usercode" : 111,
+        "username" : "zhangsan",
+        "sex" : true,
+        "age" : 20,
+        "hobbys" : ["eat","run","jump"],
+        "addr" : address
+    }
+
+    //另一个json对象
+    var address = {
+        "city" : "北京",
+        "street" : "大兴区",
+        "zipcode" : "10010"
+    }*/
+
+    var user = {
+        "usercode" : 111,
+        "username" : "zhangsan",
+        "sex" : true,
+        "age" : 20,
+        "hobbys" : ["eat","run","jump"],
+        "addr" : {
+            "city" : "北京",
+            "street" : "大兴区",
+            "zipcode" : "10010"
+        }
+    }
+
+    //访问json对象的属性
+    //第一种方式
+    console.log(user.usercode)
+    console.log(user.username)
+    console.log(user.sex ? '男' : '女')
+    console.log(user.age)
+    for(var i = 0; i < user.hobbys.length; i++){
+        console.log(user.hobbys[i])
+    }
+    console.log(user.addr.city)
+    console.log(user.addr.street)
+    console.log(user.addr.zipcode)
+
+    //第二种方式
+    console.log(user["username"])
+    console.log(user["usercode"])
+    console.log(user["sex"] ? "男" : "女")
+    console.log(user["age"])
+    for(var i = 0; i < user.hobbys.length; i++){
+        console.log(user["hobbys"][i])
+    }
+    console.log(user["addr"]["city"])
+</script>
+
+</body>
+</html>
