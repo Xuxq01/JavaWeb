@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                background: gray;
+                width: 200px;
+                height: 100px;
+            }
+            .two{
+                background: gold;
+                font-size: 20pt;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            function fun1(){
+                //使用表单选择器 $(":type的值")
+                var obj = $(":text")
+                aler
+                t(obj.val())
+            }
+            function fun2(){
+                var obj = $(":radio")
+                //循环数组,dom对象可以使用dom属性和函数
+                for(var i = 0; i < obj.length; i++){
+                    var dom = obj[i]
+                    alert(dom.value)
+                }
+            }
+            fun3 = function(){
+                var obj = $(":checkbox")//数组有三个对象
+                for(var i = 0; i < obj.length; i++){
+                    var dom = obj[i]
+                    //alert(dom.value)
+                    //使用jquery的val函数,获取value的值
+                    var jobj = $(dom)
+                    alert("jquery的函数调用=" + jobj.val())
+                }
+                //alert(obj.val())//只读取第一个
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="text" value="type=text">
+        <br>
+        <input type="radio" value="man">男<br>
+        <input type="radio" value="woman">女<br>
+        <br>
+        <input type="checkbox" value="bike">骑行<br>
+        <input type="checkbox" value="football">足球<br>
+        <input type="checkbox" value="music">音乐<br>
+        <br>
+        <input type="button" value="读取text的值" onclick="fun1()">
+        <br>
+        <input type="button" value="读取radio的值" onclick="fun2()">
+        <br>
+        <input type="button" value="读取checkbox的值" onclick="fun3()">
+    </body>
+</html>
