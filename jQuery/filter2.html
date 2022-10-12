@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                background: gray;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#btn1").click(function(){
+                    var obj = $(":text:enabled")
+                    //设置jquery数组中所有dom对象的value值
+                    obj.val("hello")
+                })
+
+                $("#btn2").click(function(){
+                    var obj = $(":checkbox:checked")
+                    for(var i = 0; i < obj.length; i++){
+                        //alert(obj[i].value)
+                        alert($(obj[i]).val())
+                    }
+                })
+
+                $("#btn3").click(function(){
+                    var obj = $("select>option:selected")
+                    alert(obj.val())
+                })
+
+                $("#btn4").click(function(){
+                    var obj = $(":text:disabled")
+                    obj.val("world")
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <br>
+        <input type="text" value="text1" id="txt1">
+        <br>
+        <input type="text" value="text2" id="txt2" disabled="true">
+        <br>
+        <input type="text" value="text3" id="txt3">
+        <br>
+        <input type="text" value="text4" id="txt4" disabled="true">
+        <br>
+
+        <input type="checkbox" value="游泳">游泳<br>
+        <input type="checkbox" value="健身" checked>健身<br>
+        <input type="checkbox" value="玩游戏" checked>玩游戏<br>
+
+        <select id="language">
+            <option value="java">java语言</option>
+            <option value="go" selected>go语言</option>
+            <option value="python">python语言</option>
+        </select>
+
+        <button id="btn1">所有可用的text设置为hello</button>
+        <button id="btn2">显示被选中的复选框的值</button>
+        <button id="btn3">显示下拉列表选中的值</button>
+        <button id="btn4">所有不可用的text设置为world</button>
+    </body>
+</html>
